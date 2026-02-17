@@ -1,0 +1,106 @@
+@prefix ldes:  <https://w3id.org/ldes#> .
+@prefix tree:  <https://w3id.org/tree#> .
+@prefix as:    <https://www.w3.org/ns/activitystreams#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix mt:     <http://www.iana.org/assignments/media-types/> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+
+@prefix deployEMDS: <urn:projects:deployEMDS:events:> .
+
+# optional but useful:
+@prefix dctype: <http://publications.europa.eu/resource/authority/distribution-type/> .
+
+<> a ldes:EventStream ;
+  tree:shape <https://semiceu.github.io/LDES-DCAT-AP-feeds/shape.ttl#ActivityShape> ;
+  dct:title "Example traffic counting JSON results"@en ;
+  ldes:timestampPath as:published ;
+  ldes:versionOfPath as:object ;
+  tree:view <> ;
+  tree:member
+    deployEMDS:test_large ,
+    deployEMDS:test_small .
+
+##############
+# Test large #
+##############
+
+# --- Bruges entry: ActivityStreams wrapper ---
+deployEMDS:test_large
+  a as:Create ;
+  as:object   <https://pod.rubendedecker.be/scholar/projects/deployEMDS/input/sample_data.json> ;
+  as:published "2026-01-01T00:00:00Z"^^xsd:dateTime .
+
+# --- Named graph for the Bruges event: dataset state ---
+deployEMDS:test_large {
+
+  <https://pod.rubendedecker.be/scholar/projects/deployEMDS/input/sample_data.json> a dcat:Dataset ;
+    dct:title "Large output sample"@en ;
+    dct:description "Large sample of traffic counting output data for the DeployEMDS project"@en ;
+    dcat:keyword "mobility", "traffic" ;
+    dct:issued "2026-01-01T00:00:00Z"^^xsd:dateTime ;
+
+    dcat:distribution [
+      a dcat:Distribution ;
+      dct:title "Output resource in JSON format"@en ;
+
+      # Access URL of the LDES collection / view
+      dcat:accessURL <https://pod.rubendedecker.be/scholar/projects/deployEMDS/input/sample_data.json> ;
+
+      # RDF format (machine-readable)
+      dcat:mediaType "text/turtle" ;
+
+      # Optional: same info in DCAT-AP-ish dct:format node
+      dct:format _:turtle_format
+    ] .
+
+  _:turtle_format a dct:MediaTypeOrExtent ;
+    dct:identifier "text/turtle" ;
+    rdfs:label "RDF Turtle"@en .
+}
+
+##############
+# Test small #
+##############
+# --- Bruges entry: ActivityStreams wrapper ---
+deployEMDS:test_small
+  a as:Create ;
+  as:object   <https://pod.rubendedecker.be/scholar/projects/deployEMDS/input/sample_data2.json> ;
+  as:published "2026-01-01T00:00:00Z"^^xsd:dateTime .
+
+# --- Named graph for the Bruges event: dataset state ---
+deployEMDS:test_small {
+
+  <https://pod.rubendedecker.be/scholar/projects/deployEMDS/input/sample_data2.json> a dcat:Dataset ;
+    dct:title "Small output sample"@en ;
+    dct:description "Small sample of traffic counting output data for the DeployEMDS project"@en ;
+    dcat:keyword "mobility", "traffic" ;
+    dct:issued "2026-01-01T00:00:00Z"^^xsd:dateTime ;
+
+    dcat:distribution [
+      a dcat:Distribution ;
+      dct:title "Output resource in JSON format"@en ;
+
+      # Access URL of the LDES collection / view
+      dcat:accessURL <https://pod.rubendedecker.be/scholar/projects/deployEMDS/input/sample_data2.json> ;
+
+      # RDF format (machine-readable)
+      dcat:mediaType "text/turtle" ;
+
+      # Optional: same info in DCAT-AP-ish dct:format node
+      dct:format _:turtle_format
+    ] .
+
+  _:turtle_format a dct:MediaTypeOrExtent ;
+    dct:identifier "text/turtle" ;
+    rdfs:label "RDF Turtle"@en .
+}
+
+##################
+# -------------- #
+# Custom Entries #
+# -------------- #
+##################
+

@@ -1,0 +1,20 @@
+
+version: "3.9"
+
+services:
+
+  # pipeline
+  client_direct-straatvinken-verkeerstellingen-brugge-2023:
+    image: ghcr.io/dexagod/ldes-to-graphstore-pipeline:latest
+    environment:
+      - DEBUG=*
+      - URL=https://brugge-ldes.geomobility.eu/observations
+      - STORE=http://host.docker.internal:7878/store?default
+
+  # pipeline
+  client_conversion-from-hamburg-traffic-counting-dataset-26110-via-pipeline-performing-semantic-alignment-from-the-sensorthings-ontology-to-oslo-verkeersmetingen:
+    image: ghcr.io/dexagod/ldes-sparql-graphstore-pipeline:latest
+    environment:
+      - DEBUG=*
+      - URL=http://193.190.127.148/ldes/
+      - STORE=http://host.docker.internal:7878/store?default

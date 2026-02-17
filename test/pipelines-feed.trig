@@ -1,0 +1,83 @@
+@prefix ldes:  <https://w3id.org/ldes#> .
+@prefix tree:  <https://w3id.org/tree#> .
+@prefix as:    <https://www.w3.org/ns/activitystreams#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix mt:    <http://www.iana.org/assignments/media-types/> .
+@prefix prof:  <http://www.w3.org/ns/dx/prof/> .
+@prefix mt:    <http://www.iana.org/assignments/media-types/> .
+@prefix vsds:  <https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#> .
+@prefix ex:    <http://example.org/ns/> .
+
+@prefix smap: <https://pod.rubendedecker.be/scholar/ontologies/smap#> .
+@prefix pipelines: <urn:projects:deployEMDS:pipelines:> .
+
+# We handle the mappings according to the profiles ontology
+# The datasets are added with a profile containing the available information (ontologies used, shapes used)
+# Based on this info, pipelines perform alignments between these "profiles"
+# 
+
+<#Feed> a ldes:EventStream ;
+  tree:shape <https://semiceu.github.io/LDES-DCAT-AP-feeds/shape.ttl#ActivityShape> ;
+  dct:title "Semantic alignments of ontologies modeling observations of traffic counts"@en ;
+  ldes:timestampPath as:published ;
+  ldes:versionOfPath as:object ;
+  tree:view <> ;
+  tree:member
+    pipelines:stapi_to_oslo_create .
+
+pipelines:stapi_to_oslo_create
+  a as:Create ;
+  as:object   pipelines:stapi_to_oslo ;
+  as:published "2025-12-04T00:00:00Z"^^xsd:dateTime .
+
+pipelines:stapi_to_oslo_create {
+  pipelines:stapi_to_oslo
+    a smap:AlignmentPipeline ;
+    dcat:keyword "mobility", "traffic" ;
+    dct:title "Pipeline performing semantic alignment from the SensorThings ontology to OSLO Verkeersmetingen"@en ;
+
+    smap:sourceProfile <urn:projects:deployEMDS:profiles:hamburg-stapi> ;
+    smap:targetProfile <urn:projects:deployEMDS:profiles:traffic-counting-straatvinken> ;
+    smap:usesMappingProfile pipelines:stapi_to_oslo_mapping_profile ;
+    smap:hasImplementation <ghcr.io/rdf-connect/stapi-to-oslo-pipeline:latest> .
+
+  pipelines:stapi_to_oslo_mapping_profile
+    a prof:Profile ;
+    dct:title "STAPI → OSLO Verkeersmetingen mapping profile"@en ;
+    prof:isProfileOf <http://www.w3.org/ns/sosa/> , <https://w3id.org/stapi> ;
+
+    # Ontology / vocabulary used for the alignment
+    prof:hasResource [
+      a prof:ResourceDescriptor ;
+      prof:hasRole <http://www.w3.org/ns/dx/prof/role/vocabulary> ;
+      prof:hasArtifact <https://data.vlaanderen.be/ns/verkeersmetingen> 
+    ] ;
+
+    prof:hasResource [
+      a prof:ResourceDescriptor ;
+      prof:hasRole <http://www.w3.org/ns/dx/prof/role/vocabulary> ;
+      prof:hasArtifact <https://w3id.org/stapi> 
+    ] ;
+
+    # Mapping rules (YARRRML)
+    prof:hasResource [
+      a prof:ResourceDescriptor ;
+      prof:hasRole ex:yarrrmlMapping ;
+      prof:hasArtifact <https://example.org/mappings/yarrrml-mapping.ttl> ;
+      dct:format "text/turtle" ;
+      dcat:mediaType "text/turtle" ;
+      dct:description "YARRRML mapping alignment from OSLO Verkeersmetingen to SensorThings API data model."@en
+    ] ;
+
+    # Validation shapes (optional)
+    prof:hasResource [
+      a prof:ResourceDescriptor ;
+      prof:hasRole <http://www.w3.org/ns/dx/prof/role/validation> ;
+      prof:hasArtifact <../shapes/straatvinken-shape> ;
+      dct:format "text/turtle" ;
+      dcat:mediaType "text/turtle"
+    ] .
+}

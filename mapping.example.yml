@@ -1,0 +1,59 @@
+prefixes:
+  sosa: "http://www.w3.org/ns/sosa/"
+  xsd:  "http://www.w3.org/2001/XMLSchema#"
+  ex:   "http://example.com/"
+
+mappings:
+  travelTimeObservation:
+    sources:
+        access: "https://pod.rubendedecker.be/scholar/projects/deployEMDS/input/sample_output.json"
+        contentType: "application/json"
+        operationType: read
+        type: wot
+        referenceFormulation: jsonpath
+        iterator: "$[*]"
+        security: none
+    s: "ex:observation/$(predefinedItineraryReference)/$(calculationTime.value)/$(predictionTime.value)"
+    po:
+      - [ a, "sosa:Observation" ]
+      - [ "sosa:observedProperty", "ex:ObservedProperty/predictedTravelTime" ]
+      - [ "sosa:hasFeatureOfInterest", "ex:itinerary/$(predefinedItineraryReference)~iri" ]
+
+      # forecast pattern (as you discussed earlier)
+      - p: "sosa:phenomenonTime"
+        o:
+          value: "$(predictionTime.value)"
+          datatype: "xsd:dateTime"
+
+      - p: "sosa:resultTime"
+        o:
+          value: "$(calculationTime.value)"
+          datatype: "xsd:dateTime"
+
+      # hasResult -> BLANK NODE (deterministic per record)
+      - p: "sosa:hasResult"
+        o:
+          value: "result-$(predefinedItineraryReference)-$(calculationTime.value)-$(predictionTime.value)"
+          type: blank
+
+  travelTimeResultBlank:
+    sources:
+        access: "https://pod.rubendedecker.be/scholar/projects/deployEMDS/input/sample_output.json"
+        contentType: "application/json"
+        operationType: read
+        type: wot
+        referenceFormulation: jsonpath
+        iterator: "$[*]"
+        security: none
+
+    # subject is the SAME blank node template as above
+    s:
+      value: "result-$(predefinedItineraryReference)-$(calculationTime.value)-$(predictionTime.value)"
+      type: blank
+
+    po:
+      - [ a, "sosa:Result" ]
+      - p: "ex:predictedTravelTime"
+        o:
+          value: "$(predictedTravelTime)"
+          datatype: "xsd:integer"

@@ -1,35 +1,19 @@
-import { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FeedManager } from './FeedManager';
 import { DatasetBrowser } from './DatasetBrowser';
-import { ExportDatasets } from './ExportDatasets';
 import { MapDatasets } from './MapDatasets';
-// import { Pipeline } from '../App';
-// import { Feed, Dataset, ShaclShape, mockFeeds, generateMockDatasets } from '../util/mock';
-import { Feed, Dataset, Pipeline, Profile } from '../util/types';
-import { DcatApClient, DcatApDataset, getDatasetObject, printDcatEntry } from '../util/DcatApLoader';
-import { getFeed } from '../util/util';
+import type { Dataset, Pipeline, Profile } from '../util/types';
+import { useFeedState, useFeedActions, useFeedDispatch } from '../stores/FeedStore';
 
 interface DataPortalPageProps {
-  pipelines: Pipeline[];
-  feeds: Feed[];
-  datasets: Dataset[];
-  
-  profiles: Profile[];
-  // shapes: ShaclShape[];
   onNavigateToProfile: (shapeId: string) => void;
-  onToggleDatasetFeed: (id: string) => void;
-  onFeedUpdate: (url: string) => void;
-  onAddFeed: (url: string) => Promise<void>
-  // onSetDcatApFeedLoadingStatus: (id: string, state: boolean) => void;
-  
-  
-  // onAddAlignment: (url: string) => void
-  // onAddMapping: (url: string) => void
 }
 
-export function DataPortalPage({ pipelines, datasets, feeds, profiles, onNavigateToProfile, onToggleDatasetFeed, onAddFeed, onFeedUpdate,/* onSetDcatApFeedLoadingStatus*/}: DataPortalPageProps) {
-  
+export function DataPortalPage({ onNavigateToProfile }: DataPortalPageProps) {
   const [selectedDatasets, setSelectedDatasets] = useState<Set<string>>(new Set());
+  const state = useFeedState();
+  const actions = useFeedActions();
+  const dispatch = useFeedDispatch();
 
   const handleToggleDataset = (id: string) => {
     const newSelected = new Set(selectedDatasets);
@@ -40,52 +24,55 @@ export function DataPortalPage({ pipelines, datasets, feeds, profiles, onNavigat
     }
     setSelectedDatasets(newSelected);
   };
-  
+
   const handleSelectAll = (ids: string[]) => {
     setSelectedDatasets(new Set([...selectedDatasets, ...ids]));
   };
-  
+
   const handleDeselectAll = () => {
     setSelectedDatasets(new Set());
   };
-  
-  const selectedDatasetObjects = datasets.filter(d => selectedDatasets.has(d.id));
-  
+
+  const selectedDatasetObjects = state.datasets.filter(d => selectedDatasets.has(d.id));
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-    <div className="space-y-6">
-    <FeedManager 
-    feeds={feeds} // todo: update
-    onAddFeed={onAddFeed}
-    onToggleFeed={onToggleDatasetFeed}
-    onRemoveFeed={() => {}}
-    canAddFeed={true}
-    />
-    
-    <MapDatasets 
-    selectedDatasets={selectedDatasetObjects}
-    pipelines={pipelines}
-    profiles={profiles}
-    feeds={feeds}
-    onNavigateToProfile={onNavigateToProfile}
-    onFeedUpdate={onFeedUpdate}
-    />
-    </div>
-    
-    <div className="lg:col-span-2">
-    <DatasetBrowser 
-    feeds={feeds.filter(f => f.active)}  // todo: reset this to feeds
-    pipelines={pipelines}
-    datasets={datasets}
-    selectedDatasets={selectedDatasets}
-    profiles={profiles}
-    // targetShape={targetShape}
-    onToggleDataset={handleToggleDataset}
-    onSelectAll={handleSelectAll}
-    onDeselectAll={handleDeselectAll}
-    onNavigateToProfile={onNavigateToProfile}
-    />
-    </div>
+      <div className="space-y-6">
+        <FeedManager
+          feeds={state.feeds}
+          onAddFeed={(url: string) => actions.loadDcatFeed(url)}
+          onToggleFeed={(id: string) => {
+            const feed = state.feeds.find(f => f.id === id || f.url === id);
+            if (!feed) return;
+            dispatch({ type: 'ADD_FEED', feed: { ...feed, active: !feed.active } });
+          }}
+          onRemoveFeed={() => {}}
+          canAddFeed={true}
+        />
+
+        <MapDatasets
+          selectedDatasets={selectedDatasetObjects}
+          pipelines={state.pipelines}
+          profiles={state.profiles}
+          feeds={state.feeds}
+          onNavigateToProfile={onNavigateToProfile}
+          onFeedUpdate={(url: string) => actions.loadDcatFeed(url)}
+        />
+      </div>
+
+      <div className="lg:col-span-2">
+        <DatasetBrowser
+          feeds={state.feeds.filter(f => f.active)}
+          pipelines={state.pipelines}
+          datasets={state.datasets}
+          selectedDatasets={selectedDatasets}
+          profiles={state.profiles}
+          onToggleDataset={handleToggleDataset}
+          onSelectAll={handleSelectAll}
+          onDeselectAll={handleDeselectAll}
+          onNavigateToProfile={onNavigateToProfile}
+        />
+      </div>
     </div>
   );
 }

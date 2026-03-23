@@ -8,6 +8,7 @@ import { mockShapes, mockPipelines } from './util/mock';
 import type { CompactObject, Dataset, Feed, Pipeline, Profile } from './util/types';
 import { loadDcatApMembers, loadPipelineMembers } from './util/load';
 import { getFeed } from './util/util';
+import { useFeedState, useFeedActions, useFeedDispatch } from './stores/FeedStore';
 import { RdfPortalPage } from './components/RdfPortalPage';
 import { DcatApClient, getDatasetObject } from './util/DcatApLoader';
 
@@ -19,109 +20,38 @@ const pipelineFeedUrl = "https://pod.rubendedecker.be/scholar/projects/deployEMD
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>('data-portal');
-
-  const [profiles, setProfiles] = useState<Profile[]>([])
-
   const [selectedProfileId, setSelectedProfileId] = useState<string | null>(null);
-  
-  const [pipelineFeeds, setPipelineFeeds] = useState<Feed[]>([])
-  const [pipelines, setPipelines] = useState<Pipeline[]>([]); 
 
-  const [dcatApFeeds, setDcatApFeeds] = useState<Feed[]>([])
-  
-  const [datasets, setDatasets] = useState<Dataset[]>([]);
-  const [rdfDatasets, setRdfDatasets] = useState<Dataset[]>([]);
+  const state = useFeedState();
+  const actions = useFeedActions();
+  const dispatch = useFeedDispatch();
 
   useEffect(() => {
-    async function runInit() {
-      await loadPipelineFeeds()
-      await loadAndSetDcatApFeedAndDatasets(dcatApFeedUrl)
-    }
-
-    runInit()
-    return () => {
-      // connection.disconnect();
-    };
+    // Load initial feeds via the centralized store actions
+    actions.loadPipelineFeed(pipelineFeedUrl);
+    actions.loadDcatFeed(dcatApFeedUrl);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const loadAndSetDcatApFeedAndDatasets = async (feedUrl: string) => {
-    console.log('Updating feed and loading datasets of', feedUrl)
-    const updatedDatasets = datasets.slice()
-    const datasetIds = updatedDatasets.map(d => d.id)
-    const datasetFeed = await getFeed(feedUrl)
-      if (datasetFeed){ 
-        // todo: fix loading screen showing here
-        datasetFeed.loading = false;
-        let newDatasets: Dataset[] = []
-        let newProfiles: Profile[] = []
-        for await (const loadedDataset of loadDcatApMembers(datasetFeed)) {
-          const matchingDatasetIndex = datasetIds.indexOf(loadedDataset.id)
-          if (matchingDatasetIndex !== -1) {
-            let matchingDataset = updatedDatasets[matchingDatasetIndex]
-            if (matchingDataset.distribution) {
-              matchingDataset.distribution.concat(loadedDataset.distribution)
-            } else {
-              matchingDataset.distribution = loadedDataset.distribution
-            }
-            updatedDatasets[matchingDatasetIndex] = matchingDataset
-          } else {
-            newDatasets = newDatasets.concat([loadedDataset])
-            if (loadedDataset.conformsTo) { 
-              newProfiles = newProfiles.concat([loadedDataset.conformsTo as Profile]) 
-            }
-          }
-        }
-        // setDcatApFeeds(dcatApFeeds.concat([datasetFeed]))
-        setDcatApFeeds(dcatApFeeds.concat([datasetFeed]).filter(
-          (item, index, self) =>
-            index === self.findIndex((t) => t.id === item.id)
-        ))
-        console.log('TESTEST', updatedDatasets.map(d => d.distribution), newDatasets.map(d => d.distribution))
-        setDatasets(updatedDatasets.concat(newDatasets).filter(
-          (item, index, self) =>
-            index === self.findIndex((t) => t.id === item.id)
-        ))
-        setProfiles(profiles.concat(newProfiles).filter(
-          (item, index, self) =>
-            index === self.findIndex((t) => t.id === item.id)
-        ))
-      }
-  }
+  // Legacy per-component loaders removed in favor of centralized store actions
 
-  const loadPipelineFeeds = async () => {
-     const pipelineFeed = await getFeed(pipelineFeedUrl)
-      if (pipelineFeed) {
-        setPipelineFeeds(pipelineFeeds.concat(pipelineFeed))
-        let newPipelines : Pipeline[] = []
-        for await (const pipeline of loadPipelineMembers(pipelineFeed)) {
-          newPipelines = newPipelines.concat(pipeline)
-        }
-        setPipelines(pipelines.concat(newPipelines).filter(
-          (item, index, self) =>
-            index === self.findIndex((t) => t.id === item.id)
-        ))
-      }
-  }
-
-  console.log('feeds', dcatApFeeds)
-  console.log('datasets', datasets)
-  console.log('pipelines', pipelines)
-  console.log('profiles', profiles)
+  console.log('feeds', state.feeds)
+  console.log('datasets', state.datasets)
+  console.log('pipelines', state.pipelines)
+  console.log('profiles', state.profiles)
 
   const handleAddPipeline = (pipeline: Pipeline) => {
-    setPipelines(pipelines.concat([pipeline]))
-
-    // todo:: persist changes on solid pod?
+    dispatch({ type: 'ADD_PIPELINES', pipelines: [pipeline] });
   };
 
   const handleTogglePipeline = (id: string) => {
-    setPipelines(pipelines.map(pipeline => 
-      pipeline.id === id ? { ...pipeline, active: !pipeline.active } : pipeline
-    ));
+    const existing = state.pipelines.find(p => p.id === id);
+    if (!existing) return;
+    dispatch({ type: 'ADD_PIPELINES', pipelines: [{ ...existing, active: !existing.active }] });
   };
 
   const handleRemovePipeline = (id: string) => {
-    setPipelines(pipelines.filter(pipeline => pipeline.id !== id));
+    dispatch({ type: 'REMOVE_PIPELINE', id });
   };
 
   const handleNavigateToShape = (shapeId: string) => {
@@ -130,23 +60,21 @@ export default function App() {
   };
 
   const onToggleDatasetFeed = (id : string) => {
-    console.log('toggling', id)
-    setDcatApFeeds(dcatApFeeds.map(feed => 
-      feed.id === id ? { ...feed, active: !feed.active } : feed
-    ));
+    const feed = state.feeds.find(f => f.id === id || f.url === id);
+    if (!feed) return;
+    dispatch({ type: 'ADD_FEED', feed: { ...feed, active: !feed.active } });
   }
 
   const onTogglePipelineFeed = (id : string) => {
-    setPipelineFeeds(pipelineFeeds.map(feed => 
-      feed.id === id ? { ...feed, active: !feed.active } : feed
-    ));
+    const feed = state.feeds.find(f => f.id === id || f.url === id);
+    if (!feed) return;
+    dispatch({ type: 'ADD_FEED', feed: { ...feed, active: !feed.active } });
   }
 
   const onSetDcatApFeedLoadingStatus = (id: string, status: boolean) => {
-    console.log('setting feed status', id, status, dcatApFeeds)
-    setDcatApFeeds(dcatApFeeds.map(feed => 
-      feed.id === id ? { ...feed, loading: status } : feed
-    ));
+    const feed = state.feeds.find(f => f.id === id || f.url === id);
+    if (!feed) return;
+    dispatch({ type: 'ADD_FEED', feed: { ...feed, loading: status } });
   }
 
   const onAddMapping = (url: string) => {
@@ -158,11 +86,11 @@ export default function App() {
   }
 
   const onFeedUpdate = (url: string) => {
-    loadAndSetDcatApFeedAndDatasets(url)
+    actions.loadDcatFeed(url);
   }
-  
+
   const onAddFeed = async (url: string) => {
-    loadAndSetDcatApFeedAndDatasets(url)
+    await actions.loadDcatFeed(url);
     // // const feed = await getFeed(url)
     // // console.log('onAddFeed', feed)
     // // if (feed) setDcatApFeeds(dcatApFeeds.concat([feed]))
@@ -314,16 +242,7 @@ export default function App() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {currentPage === 'data-portal' ? (
           <DataPortalPage 
-            datasets={datasets}
-            feeds={dcatApFeeds}
-            pipelines={pipelines} 
-            profiles={profiles}
-            // shapes={shapes}
             onNavigateToProfile={handleNavigateToShape}
-            onToggleDatasetFeed={onToggleDatasetFeed}
-            onAddFeed={onAddFeed}
-            onFeedUpdate={onFeedUpdate}
-            // onSetDcatApFeedLoadingStatus={onSetDcatApFeedLoadingStatus}
           />
         // ) : currentPage === 'mapping-pipelines' ? (
         //   <AlignmentPipelinesPage
@@ -338,10 +257,10 @@ export default function App() {
         //   />
         ) : currentPage === 'rdf-portal' ? (
           <RdfPortalPage 
-            datasets={datasets}
-            feeds={dcatApFeeds}
-            pipelines={pipelines} 
-            profiles={profiles}
+            datasets={state.datasets}
+            feeds={state.feeds}
+            pipelines={state.pipelines} 
+            profiles={state.profiles}
             // shapes={shapes}
             onNavigateToProfile={handleNavigateToShape}
             onToggleDatasetFeed={onToggleDatasetFeed}
@@ -351,9 +270,9 @@ export default function App() {
           />
         ) : currentPage === 'alignment-pipelines' ? (
           <AlignmentPipelinesPage
-            feeds={pipelineFeeds} 
-            pipelines={pipelines}
-            profiles={profiles}
+            feeds={state.feeds} 
+            pipelines={state.pipelines}
+            profiles={state.profiles}
             onAddPipeline={handleAddPipeline}
             onTogglePipeline={handleTogglePipeline}
             onRemovePipeline={handleRemovePipeline}
@@ -362,9 +281,9 @@ export default function App() {
           />
         ) : currentPage === 'shape-registry' ? (
           <ShapeRegistryPage 
-            profiles={profiles}
-            datasets={datasets}
-            pipelines={pipelines}
+            profiles={state.profiles}
+            datasets={state.datasets}
+            pipelines={state.pipelines}
             selectedProfileId={selectedProfileId}
             onClearSelection={() => setSelectedProfileId(null)}
           />

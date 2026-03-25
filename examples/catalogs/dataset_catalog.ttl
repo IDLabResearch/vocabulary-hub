@@ -1,0 +1,73 @@
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+<https://pod.rubendedecker.be/scholar/projects/deployEMDS/catalogs/dataset_catalog#Catalog> a dcat:Catalog ;   
+    dct:title "Europe Traffic counting measurements";
+    dct:description "Traffic counting measurements in Europe bundled for the DeployEMDS project".
+
+<https://pod.rubendedecker.be/scholar/projects/deployEMDS/catalogs/dataset_catalog#Catalog> dcat:dataset <https://pod.rubendedecker.be/scholar/projects/deployEMDS/datasets/sample_dataset1>.
+<https://pod.rubendedecker.be/scholar/projects/deployEMDS/datasets/sample_dataset1> a dcat:Dataset;
+    dct:title "Synthetic prediction sample Zwijnaarde"@en ;
+    dct:description "Synthetic prediction sample of traffic at Zwijnaarde Techlane campus"@en ;
+    dcat:keyword "mobility", "traffic", "prediction", "synthetic" ;
+    dct:issued "2026-01-01T00:00:00Z"^^xsd:dateTime .
+
+<https://pod.rubendedecker.be/scholar/projects/deployEMDS/datasets/sample_dataset1> dcat:distribution <https://pod.rubendedecker.be/scholar/projects/deployEMDS/distributions/sample_dataset1.json> .
+<https://pod.rubendedecker.be/scholar/projects/deployEMDS/distributions/sample_dataset1.json> a dcat:Distribution ;
+      dct:title "Traffic predictions in JSON format"@en ;
+      dct:description: "JSON distribution of dataset of traffic predictions for Zwijnaarde Techlange Campus" ;
+      dcat:accessURL <https://pod.rubendedecker.be/scholar/projects/deployEMDS/distributions/sample_dataset1.json> ;
+      dcat:mediaType <http://www.iana.org/assignments/media-types/application/json> ;
+      dct:format <http://www.iana.org/assignments/media-types/application/json> .
+
+
+<https://pod.rubendedecker.be/scholar/projects/deployEMDS/catalogs/dataset_catalog#Catalog> dcat:dataset <https://pod.rubendedecker.be/scholar/projects/deployEMDS/datasets/sample_dataset2>.
+<https://pod.rubendedecker.be/scholar/projects/deployEMDS/datasets/sample_dataset2> a dcat:Dataset;
+    dct:title "Synthetic prediction sample Sterre"@en ;
+    dct:description "Synthetic prediction sample of traffic at Sterre roundabout campus"@en ;
+    dcat:keyword "mobility", "traffic", "prediction", "synthetic" ;
+    dct:issued "2026-01-01T00:00:00Z"^^xsd:dateTime .
+
+<https://pod.rubendedecker.be/scholar/projects/deployEMDS/datasets/sample_dataset2> dcat:distribution <https://pod.rubendedecker.be/scholar/projects/deployEMDS/distributions/sample_dataset2.json> .
+<https://pod.rubendedecker.be/scholar/projects/deployEMDS/distributions/sample_dataset2.json> a dcat:Distribution ;
+      dct:title "Traffic predictions in JSON format"@en ;
+      dct:description: "JSON distribution of dataset of traffic predictions for Sterre" ;
+      dcat:accessURL <https://pod.rubendedecker.be/scholar/projects/deployEMDS/distributions/sample_dataset2.json> ;
+      dcat:mediaType <http://www.iana.org/assignments/media-types/application/json> ;
+      dct:format <http://www.iana.org/assignments/media-types/application/json> .
+
+
+<https://pod.rubendedecker.be/scholar/projects/deployEMDS/catalogs/dataset_catalog#Catalog> dcat:dataset <https://pod.rubendedecker.be/scholar/projects/deployEMDS/datasets/sample_dataset3>.
+<https://pod.rubendedecker.be/scholar/projects/deployEMDS/datasets/sample_dataset3> a dcat:Dataset;
+    dct:title "Synthetic prediction sample Gent-Sint-Pieters"@en ;
+    dct:description "Synthetic prediction sample of traffic at Gent-Sint-Pieters Voskenslaan"@en ;
+    dcat:keyword "mobility", "traffic", "prediction", "synthetic" ;
+    dct:issued "2026-01-01T00:00:00Z"^^xsd:dateTime .
+
+<https://pod.rubendedecker.be/scholar/projects/deployEMDS/datasets/sample_dataset3> dcat:distribution <https://pod.rubendedecker.be/scholar/projects/deployEMDS/distributions/sample_dataset3.json> .
+<https://pod.rubendedecker.be/scholar/projects/deployEMDS/distributions/sample_dataset3.json> a dcat:Distribution ;
+      dct:title "Traffic predictions in JSON format"@en ;
+      dct:description: "JSON distribution of dataset of traffic predictions for Gent-Sint-Pieters" ;
+      dcat:accessURL <https://pod.rubendedecker.be/scholar/projects/deployEMDS/distributions/sample_dataset3.json> ;
+      dcat:mediaType <http://www.iana.org/assignments/media-types/application/json> ;
+      dct:format <http://www.iana.org/assignments/media-types/application/json> .
+
+
+
+<https://pod.rubendedecker.be/scholar/projects/deployEMDS/catalogs/dataset_catalog#Catalog> dcat:dataset <https://pod.rubendedecker.be/scholar/projects/deployEMDS/datasets/sample_dataset4>.
+<https://pod.rubendedecker.be/scholar/projects/deployEMDS/datasets/sample_dataset4> a dcat:Dataset;
+    dct:title "Synthetic prediction sample The Loop"@en ;
+    dct:description "Synthetic prediction sample of traffic at The Loop"@en ;
+    dcat:keyword "mobility", "traffic", "prediction", "synthetic" ;
+    dct:issued "2026-01-01T00:00:00Z"^^xsd:dateTime .
+
+<https://pod.rubendedecker.be/scholar/projects/deployEMDS/datasets/sample_dataset4> dcat:distribution <https://pod.rubendedecker.be/scholar/projects/deployEMDS/distributions/sample_dataset4.json> .
+<https://pod.rubendedecker.be/scholar/projects/deployEMDS/distributions/sample_dataset4.json> a dcat:Distribution ;
+      dct:title "Traffic predictions in JSON format"@en ;
+      dct:description: "JSON distribution of dataset of traffic predictions for The Loop" ;
+      dcat:accessURL <https://pod.rubendedecker.be/scholar/projects/deployEMDS/distributions/sample_dataset4.json> ;
+      dcat:mediaType <http://www.iana.org/assignments/media-types/application/json> ;
+      dct:format <http://www.iana.org/assignments/media-types/application/json> .
+
+

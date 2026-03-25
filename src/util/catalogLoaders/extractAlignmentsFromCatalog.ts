@@ -1,6 +1,6 @@
-import { fetchRDF } from "../util/util";
 import { Store, DataFactory } from "n3";
-import type { DcatCatalog, AlignmentArtifact, AlignmentResourceDescriptor, QualityMeasurement } from "../types/dcat-types";
+import type { DcatCatalog, AlignmentArtifact, AlignmentResourceDescriptor, QualityMeasurement } from "../../types/dcat-types";
+import { fetchRDF } from "../util";
 
 const RDF_TYPE = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type";
 const PMAP = "https://w3id.org/pmap#";
@@ -8,6 +8,20 @@ const PROF_NS = "http://www.w3.org/ns/dx/prof/";
 const DCT = "http://purl.org/dc/terms/";
 const DQV = "http://www.w3.org/ns/dqv#";
 
+/**
+ * Extract alignment artifacts from resources listed in a `DcatCatalog`.
+ *
+ * For each resource IRI in `catalog.resources` the function fetches RDF quads
+ * (using `fetchRDF`) and searches for subjects typed as `pmap:ProfileAlignment` or
+ * `prof:Profile`. It maps found nodes into `AlignmentArtifact` objects and
+ * collects resource descriptors and simple quality measurements.
+ *
+ * The function tolerates per-resource errors and continues processing other
+ * resources when a single resource fails to parse.
+ *
+ * @param {DcatCatalog} catalog - Catalog whose `resources` will be inspected.
+ * @returns {Promise<AlignmentArtifact[]>} Promise resolving to an array of alignment artifacts.
+ */
 export async function extractAlignmentsFromCatalog(catalog: DcatCatalog): Promise<AlignmentArtifact[]> {
   const out: AlignmentArtifact[] = [];
   const resources = catalog.resources ?? [];

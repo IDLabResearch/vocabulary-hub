@@ -1,0 +1,34 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix role: <http://www.w3.org/ns/dx/prof/role/> .
+<https://voc-hub.org/profiles/catalog> a dcat:Catalog ;
+    dcat:resource <https://voc-hub.org/profiles/stapi-ldes>, <https://voc-hub.org/profiles/oslo-verkeersmetingen> .
+
+<https://voc-hub.org/profiles/stapi-ldes> a prof:Profile ;
+    dct:title "SensorThings API LDES Profile"@en ;
+    dct:publisher <https://urbandataplatform.hamburg> ;
+    prof:isProfileOf <https://docs.ogc.org/is/18-088/18-088.html>, <https://w3id.org/ldes/specification> ;
+    prof:hasResource [
+        prof:hasRole role:vocabulary ;
+        prof:hasArtifact <https://w3id.org/stapi>
+    ] , [
+        prof:hasRole role:validation ;
+        prof:hasArtifact <https://voc-hub.org/shapes/sensorthings-api-shape.ttl>
+    ] .
+
+<https://meta-boker.org/distributions/hamburg-stapi> dct:conformsTo <https://voc-hub.org/profiles/stapi-ldes>.
+
+<https://voc-hub.org/profiles/oslo-verkeersmetingen> a prof:Profile ;
+    dct:title "OSLO Verkeersmetingen Profile"@en ;
+    dct:publisher <https://data.vlaanderen.be/id/organisatie/OVO000009> ;
+    prof:isProfileOf <https://data.vlaanderen.be/doc/applicatieprofiel/verkeersmetingen/erkendestandaard/2024-04-17/> ;
+    prof:hasResource 
+        [
+            prof:hasRole role:vocabulary ;
+            prof:hasArtifact <https://data.vlaanderen.be/ns/verkeersmetingen>
+        ] , [
+            prof:hasRole role:validation ;
+            prof:hasArtifact <https://voc-hub.org/shapes/oslo-verkeersmetingen-shape.ttl>
+        ] .
+

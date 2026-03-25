@@ -1,0 +1,30 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix role: <http://www.w3.org/ns/dx/prof/role/> .
+@prefix pmap: <https://w3id.org/pmap#> .
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://voc-hub.org/alignments/catalog> a dcat:Catalog ;
+    dcat:resource <https://voc-hub.org/alignments/stapi-to-oslo> .
+
+<https://voc-hub.org/alignments/stapi-to-oslo>
+    a pmap:ProfileAlignment , prof:Profile , dcat:Resource ;
+    dct:title "SensorThings to OSLO Traffic Alignment"@en ;
+    dct:publisher <https://urbandataplatform.hamburg> ;
+    prof:isProfileOf <https://voc-hub.org/profiles/stapi-ldes> ;
+    pmap:sourceProfile <https://voc-hub.org/profiles/stapi-ldes> ;
+    pmap:targetProfile <https://voc-hub.org/profiles/oslo-verkeersmetingen> ;
+    dqv:hasQualityMeasurement [
+        dqv:isMeasurementOf dqv:completeness ;
+        dqv:value "0.87"^^xsd:double
+    ] ;
+prof:hasResource [
+a prof:ResourceDescriptor ;
+prof:hasRole role:mapping ;
+dct:title "SPARQL CONSTRUCT transformation"@en ;
+dct:format <https://www.iana.org/assignments/media-types/application/sparql-query#Resource> ;
+dct:conformsTo <http://www.w3.org/TR/sparql11-query/> ;
+prof:hasArtifact <https://voc-hub.org/alignments/stapi-to-oslo.rq>
+] .

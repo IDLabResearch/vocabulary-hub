@@ -6,10 +6,18 @@
  * because DCAT payloads are heterogeneous; please extend as needed.
  */
 
-// Basic identifier type (IRI)
+/**
+ * Basic identifier type (IRI)
+ * @typedef {string} Iri
+ */
 export type Iri = string;
 
 // Distribution (DCAT Distribution / DCAT-AP)
+/**
+ * DCAT Distribution / DCAT-AP distribution metadata.
+ *
+ * Fields are permissive to reflect heterogeneous DCAT payloads.
+ */
 export interface Distribution {
   id?: Iri;
   accessURL?: string | string[]; // accessURL(s)
@@ -27,6 +35,12 @@ export interface Distribution {
 }
 
 // DCAT-AP 3.0.0 Dataset entry (not exhaustive but covers required/commonly used fields)
+/**
+ * DCAT-AP Dataset entry representation (partial).
+ *
+ * Contains common dataset fields used by the app. Some fields are optional
+ * and may contain either a string or language-mapped record.
+ */
 export interface DcatDataset {
   id: Iri; // Dataset IRI (mandatory)
   title?: string | Record<string,string>;
@@ -60,6 +74,9 @@ export interface DcatDataset {
 }
 
 // DCAT Catalog description
+/**
+ * DCAT Catalog description.
+ */
 export interface DcatCatalog {
   id: Iri;
   title?: string | Record<string,string>;
@@ -78,6 +95,9 @@ export interface DcatCatalog {
 }
 
 // Profile resource descriptor (prof:Profile + prof:hasResource entries)
+/**
+ * Descriptor for a resource inside a prof:Profile (prof:hasResource entries).
+ */
 export interface ProfileResourceDescriptor {
   hasRole?: Iri | string; // prof:hasRole
   hasArtifact?: Iri | string; // prof:hasArtifact (artifact IRI)
@@ -87,6 +107,9 @@ export interface ProfileResourceDescriptor {
   [k:string]: any;
 }
 
+/**
+ * Representation of a prof:Profile artifact discovered in RDF.
+ */
 export interface ProfileArtifact {
   id: Iri;
   type?: string; // rdf:type (prof:Profile etc.)
@@ -101,6 +124,9 @@ export interface ProfileArtifact {
 }
 
 // Quality measurement (simple representation)
+/**
+ * Simple representation of a quality measurement (dqv related).
+ */
 export interface QualityMeasurement {
   type?: string; // e.g. dqv:completeness
   value?: number | string;
@@ -109,6 +135,9 @@ export interface QualityMeasurement {
 }
 
 // Alignment resource descriptor (mapping/alignment artifact)
+/**
+ * Descriptor for alignment/mapping resources attached to an alignment artifact.
+ */
 export interface AlignmentResourceDescriptor {
   title?: string;
   format?: string | Iri;
@@ -118,6 +147,9 @@ export interface AlignmentResourceDescriptor {
   [k:string]: any;
 }
 
+/**
+ * Representation of an alignment artifact (pmap:ProfileAlignment / mapping files).
+ */
 export interface AlignmentArtifact {
   id: Iri;
   title?: string | Record<string,string>;

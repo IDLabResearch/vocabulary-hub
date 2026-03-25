@@ -1,11 +1,24 @@
-import { fetchRDF } from "../util/util";
+import { fetchRDF } from "../util";
 import { Store, DataFactory } from "n3";
-import type { DcatCatalog, ProfileArtifact, ProfileResourceDescriptor } from "../types/dcat-types";
+import type { DcatCatalog, ProfileArtifact, ProfileResourceDescriptor } from "../../types/dcat-types";
 
 const RDF_TYPE = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type";
 const PROF_NS = "http://www.w3.org/ns/dx/prof/";
 const DCT = "http://purl.org/dc/terms/";
 
+/**
+ * Extract profile artifacts from resources listed in a `DcatCatalog`.
+ *
+ * For each resource IRI the function fetches RDF and looks for nodes typed
+ * `prof:Profile`. It collects id, title, publisher and `prof:hasResource`
+ * descriptors and returns them as `ProfileArtifact` objects.
+ *
+ * Errors while processing individual resources are ignored so other resources
+ * continue to be processed.
+ *
+ * @param {DcatCatalog} catalog - Catalog whose `resources` should be inspected.
+ * @returns {Promise<ProfileArtifact[]>} Promise resolving to an array of profile artifacts.
+ */
 export async function extractProfilesFromCatalog(catalog: DcatCatalog): Promise<ProfileArtifact[]> {
   const out: ProfileArtifact[] = [];
   const resources = catalog.resources ?? [];

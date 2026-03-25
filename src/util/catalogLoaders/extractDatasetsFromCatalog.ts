@@ -1,10 +1,16 @@
-import { DcatApClient, getDatasetObject } from "../util/DcatApLoader";
-import type { DcatCatalog } from "../types/dcat-types";
-import type { DcatDataset, Distribution } from "../types/dcat-types";
+import { DcatApClient, getDatasetObject } from "../DcatApLoader";
+import type { DcatCatalog } from "../../types/dcat-types";
+import type { DcatDataset, Distribution } from "../../types/dcat-types";
 
 /**
- * Given a DcatCatalog, iterate its datasets and return an array of DcatDataset
- * objects (mapped from the internal DcatApDataset representation).
+ * Extract datasets from a DCAT catalog by iterating the catalog's datasets using
+ * the DcatApClient and mapping them to the app's `DcatDataset` shape.
+ *
+ * This is a best-effort mapper: it uses `getDatasetObject` to normalise the
+ * provider-specific dataset representation and maps commonly used fields.
+ *
+ * @param {DcatCatalog} catalog - Catalog to extract datasets from (uses `catalog.url` or `catalog.id`).
+ * @returns {Promise<DcatDataset[]>} Promise resolving to an array of mapped datasets.
  */
 export async function extractDatasetsFromCatalog(catalog: DcatCatalog): Promise<DcatDataset[]> {
   const url = catalog.url ?? catalog.id;

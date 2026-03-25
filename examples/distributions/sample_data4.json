@@ -1,0 +1,1202 @@
+[
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 265,
+    "predictionTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 254,
+    "predictionTime": {
+      "value": "2025-01-01 01:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 275,
+    "predictionTime": {
+      "value": "2025-01-01 02:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 260,
+    "predictionTime": {
+      "value": "2025-01-01 03:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 307,
+    "predictionTime": {
+      "value": "2025-01-01 04:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 269,
+    "predictionTime": {
+      "value": "2025-01-01 05:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 269,
+    "predictionTime": {
+      "value": "2025-01-01 06:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 272,
+    "predictionTime": {
+      "value": "2025-01-01 07:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 274,
+    "predictionTime": {
+      "value": "2025-01-01 08:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 268,
+    "predictionTime": {
+      "value": "2025-01-01 09:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 302,
+    "predictionTime": {
+      "value": "2025-01-01 10:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 279,
+    "predictionTime": {
+      "value": "2025-01-01 11:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 244,
+    "predictionTime": {
+      "value": "2025-01-01 12:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 276,
+    "predictionTime": {
+      "value": "2025-01-01 13:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 272,
+    "predictionTime": {
+      "value": "2025-01-01 14:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 242,
+    "predictionTime": {
+      "value": "2025-01-01 15:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 248,
+    "predictionTime": {
+      "value": "2025-01-01 16:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 263,
+    "predictionTime": {
+      "value": "2025-01-01 17:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 345,
+    "predictionTime": {
+      "value": "2025-01-01 18:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 264,
+    "predictionTime": {
+      "value": "2025-01-01 19:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 321,
+    "predictionTime": {
+      "value": "2025-01-01 20:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 279,
+    "predictionTime": {
+      "value": "2025-01-01 21:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 284,
+    "predictionTime": {
+      "value": "2025-01-01 22:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 270,
+    "predictionTime": {
+      "value": "2025-01-01 23:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 301,
+    "predictionTime": {
+      "value": "2025-01-02 00:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 298,
+    "predictionTime": {
+      "value": "2025-01-02 01:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 256,
+    "predictionTime": {
+      "value": "2025-01-02 02:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 299,
+    "predictionTime": {
+      "value": "2025-01-02 03:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 277,
+    "predictionTime": {
+      "value": "2025-01-02 04:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 227,
+    "predictionTime": {
+      "value": "2025-01-02 05:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 282,
+    "predictionTime": {
+      "value": "2025-01-02 06:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 299,
+    "predictionTime": {
+      "value": "2025-01-02 07:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 333,
+    "predictionTime": {
+      "value": "2025-01-02 08:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 306,
+    "predictionTime": {
+      "value": "2025-01-02 09:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 276,
+    "predictionTime": {
+      "value": "2025-01-02 10:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 246,
+    "predictionTime": {
+      "value": "2025-01-02 11:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 253,
+    "predictionTime": {
+      "value": "2025-01-02 12:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 292,
+    "predictionTime": {
+      "value": "2025-01-02 13:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 228,
+    "predictionTime": {
+      "value": "2025-01-02 14:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 254,
+    "predictionTime": {
+      "value": "2025-01-02 15:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 254,
+    "predictionTime": {
+      "value": "2025-01-02 16:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 295,
+    "predictionTime": {
+      "value": "2025-01-02 17:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 268,
+    "predictionTime": {
+      "value": "2025-01-02 18:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 295,
+    "predictionTime": {
+      "value": "2025-01-02 19:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 268,
+    "predictionTime": {
+      "value": "2025-01-02 20:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 308,
+    "predictionTime": {
+      "value": "2025-01-02 21:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 406,
+    "predictionTime": {
+      "value": "2025-01-02 22:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 280,
+    "predictionTime": {
+      "value": "2025-01-02 23:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 309,
+    "predictionTime": {
+      "value": "2025-01-03 00:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 314,
+    "predictionTime": {
+      "value": "2025-01-03 01:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 242,
+    "predictionTime": {
+      "value": "2025-01-03 02:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 305,
+    "predictionTime": {
+      "value": "2025-01-03 03:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 212,
+    "predictionTime": {
+      "value": "2025-01-03 04:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 315,
+    "predictionTime": {
+      "value": "2025-01-03 05:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 224,
+    "predictionTime": {
+      "value": "2025-01-03 06:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 244,
+    "predictionTime": {
+      "value": "2025-01-03 07:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 305,
+    "predictionTime": {
+      "value": "2025-01-03 08:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 215,
+    "predictionTime": {
+      "value": "2025-01-03 09:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 237,
+    "predictionTime": {
+      "value": "2025-01-03 10:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 314,
+    "predictionTime": {
+      "value": "2025-01-03 11:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 257,
+    "predictionTime": {
+      "value": "2025-01-03 12:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 238,
+    "predictionTime": {
+      "value": "2025-01-03 13:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 239,
+    "predictionTime": {
+      "value": "2025-01-03 14:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 263,
+    "predictionTime": {
+      "value": "2025-01-03 15:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 312,
+    "predictionTime": {
+      "value": "2025-01-03 16:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 283,
+    "predictionTime": {
+      "value": "2025-01-03 17:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 290,
+    "predictionTime": {
+      "value": "2025-01-03 18:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 307,
+    "predictionTime": {
+      "value": "2025-01-03 19:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 301,
+    "predictionTime": {
+      "value": "2025-01-03 20:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 266,
+    "predictionTime": {
+      "value": "2025-01-03 21:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 273,
+    "predictionTime": {
+      "value": "2025-01-03 22:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 303,
+    "predictionTime": {
+      "value": "2025-01-03 23:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 194,
+    "predictionTime": {
+      "value": "2025-01-04 00:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 181,
+    "predictionTime": {
+      "value": "2025-01-04 01:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 207,
+    "predictionTime": {
+      "value": "2025-01-04 02:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 195,
+    "predictionTime": {
+      "value": "2025-01-04 03:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 213,
+    "predictionTime": {
+      "value": "2025-01-04 04:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 227,
+    "predictionTime": {
+      "value": "2025-01-04 05:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 189,
+    "predictionTime": {
+      "value": "2025-01-04 06:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 194,
+    "predictionTime": {
+      "value": "2025-01-04 07:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 214,
+    "predictionTime": {
+      "value": "2025-01-04 08:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 253,
+    "predictionTime": {
+      "value": "2025-01-04 09:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 171,
+    "predictionTime": {
+      "value": "2025-01-04 10:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 189,
+    "predictionTime": {
+      "value": "2025-01-04 11:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 190,
+    "predictionTime": {
+      "value": "2025-01-04 12:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 181,
+    "predictionTime": {
+      "value": "2025-01-04 13:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 174,
+    "predictionTime": {
+      "value": "2025-01-04 14:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 243,
+    "predictionTime": {
+      "value": "2025-01-04 15:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 182,
+    "predictionTime": {
+      "value": "2025-01-04 16:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 221,
+    "predictionTime": {
+      "value": "2025-01-04 17:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 189,
+    "predictionTime": {
+      "value": "2025-01-04 18:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 262,
+    "predictionTime": {
+      "value": "2025-01-04 19:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 213,
+    "predictionTime": {
+      "value": "2025-01-04 20:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 187,
+    "predictionTime": {
+      "value": "2025-01-04 21:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 190,
+    "predictionTime": {
+      "value": "2025-01-04 22:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 241,
+    "predictionTime": {
+      "value": "2025-01-04 23:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 193,
+    "predictionTime": {
+      "value": "2025-01-05 00:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 197,
+    "predictionTime": {
+      "value": "2025-01-05 01:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 152,
+    "predictionTime": {
+      "value": "2025-01-05 02:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  },
+  {
+    "calculationTime": {
+      "value": "2025-01-01 00:00:00"
+    },
+    "predefinedItineraryReference": "GM_JOURNEY_TIME|9800ZXWABOAR",
+    "predictedTravelTime": 201,
+    "predictionTime": {
+      "value": "2025-01-05 03:00:00"
+    },
+    "latitude": "51.027762000",
+    "longitude": "3.690014000"
+  }
+]

@@ -4,26 +4,53 @@ import ReactMarkdown from 'react-markdown';
 import "./markdown.css"
 
 const defaultContent = `
-# Data Management Portal Documentation
+# Vocabular Hub Demonstrator DeployEMDS
 
-Welcome to the Data Management Portal! This guide will help you understand and use all the features of the portal.
+This repository contains the demonstrator of the vocabulary hub created for the deployEMDS project. 
 
-## Functionality Overview
-
-The Data Management Portal is a comprehensive solution for managing DCAT-AP data feeds, SHACL shapes, and semantic alignment pipelines.
-
-### Key Features
-
-- **Data Portal**: Load (LDES) DCAT-AP feeds, and map the contained datasets to RDF using [YARRRML](https://rml.io/yarrrml/)
-- **RDF Portal**: Filter the RDF datasets from the loaded feeds, and export them in the desired dataset profile using the alignment pipelines
-- **Alignment Pipelines**: Manage and add alignment pipelines between dataset profiles
-- **Dataset Profile Registry**: Overview of the loaded dataset profiles, and their connected datasets and pipelines
+It provides the following interfaces:
+- **Data Portal**: Loads DCAT-AP feeds and contained datasets, ad enables their mapping into RDF using YARRRML.
+- **RDF Portal**: Displays the dataset distributions available as RDF, their linked profiles, and the option to export them according to a certain profile using the alignment pipelines.
+- **Alignment Pipelines**: Displays the current alignment pipelines based on SPARQL Construct queries available in the system, as well as the option to add additional pipelines by providing a SPARQL Construct query to the system.
+- **Dataset Profile Registry**: Provides an overview of the loaded dataset profiles, and their connected datasets and pipelines in the system 
 
 ---
 
-## 1 Data Portal
+## Preparatory steps
 
-### 1.1 Adding Data Feeds
+Prior to running the demo, we need to setup some functionality via docker
+
+### Running the YARRRML mapping docker
+To run the local YARRRML mapping service, run the following docker compose script as `docker-compose.yml`
+\`\`\`yml
+services:
+  yarrrml-map:
+    image: ghcr.io/dexagod/yarrrml-to-rml-service-docker:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - DEFAULT_SERIALIZATION=nquads
+\`\`\`
+
+### Running the Oxigraph docker
+To run the local Oxigraph  service, run the following docker compose script as `docker-compose.yml`
+\`\`\`yml
+services:
+  oxigraph:
+    image: oxigraph/oxigraph:latest
+    container_name: oxigraph
+    ports:
+      - "7878:7878"
+    command: ["serve", "--bind", "0.0.0.0:7878", "--location", "/tmp/oxigraph", "--cors"]
+    restart: "no"
+\`\`\`
+
+# Running the demonstrator flow
+
+## Data Portal
+
+### Adding Data Feeds
 
 To add an (LDES) DCAT-AP feed to the system
 
@@ -32,10 +59,11 @@ To add an (LDES) DCAT-AP feed to the system
 3. Add the URL of the (LDES) DCAT-AP feed
 4. The system will automatically discover and list available datasets
 
+For the demo, the feed at [https://pod.rubendedecker.be/scholar/projects/deployEMDS/feeds/results-feed](https://pod.rubendedecker.be/scholar/projects/deployEMDS/feeds/results-feed) was added, for which the appropriate mappings have been pre-filled in the input fields.
+
 Notes: 
 
-For the demo, added feeds and pipelines are not stored internally, but mapped datasets are persisted both in the feed and on the target location. 
-For a finished component, the Data Hub / Vocabulary Hub server will want to persist these feeds and keep up to date with remote sources.
+For the demo, added feeds and pipelines are stored internally in the webpage, and will need to be re-loaded when re-launching the application. When adding a feed, please select `"Traffic Counting DCAT-AP Feed"` as the target feed, and reload the webpage after doing the mapping, since there is a small loading issue that I will try to fix still.
 
 ### 1.2 Browsing Datasets
 
@@ -64,7 +92,6 @@ The current implementation treats every input resource as a source "data.json". 
 
 The mapping service can be found at [https://github.com/Dexagod/yarrrml-to-rml-service-docker](https://github.com/Dexagod/yarrrml-to-rml-service-docker). You can run this locally and use the default URL.
 
----
 
 ## 2 RDF Portal 
 
@@ -88,7 +115,6 @@ Here, the selected datasets are exported by
 3. loading the resulting datasets and mappings into the target graphstore (default URL is setup for a local oxigraph service hosted in docker)
 4. the target named graph in whcih the resulting datasets should be loaded can be changed, or left on the default graph
 
----
 
 ## 3 Alignment pipelines
 
@@ -111,16 +137,12 @@ Notes:
 
 Since the alignment happens through a docker container performed at the client or dataspace service, other methods than SPARQL Construct can be employed for this alignment.
 
----
-
 ## 4. Dataset Profile Registry
 
 This page keeps track of the dataset profiles used in the published datasets and alignment pipelines.
 The concept of a *Dataset Profile* is used to provide a comprehensive description of a dataset, 
 based on the availability of both the used ontologies, and associated SHACL shape assigned to 
 the contents of a dataset.
-
----
 
 ## The Vocabulary Hub
 
@@ -129,17 +151,24 @@ The server component of the Vocabulary Hub keeps track of a set of "feeds", that
 This includes the tracked dcat-ap feeds, dataset profile alignment pipeline feeds, and any other data that should be persisted at ecosystem level.
 
 In terms of performing alignments, based on the availability of semantic data, dataset profile metadata and alignment pipelines, 
-this can happen both at the edge by the client, or by distributed services avaialble in the data ecosystems.
+this can happen both at the edge by the client, or by distributed services available in the data ecosystems.
 
 The resulting resources of RML mapping or Semantic Alignment mapping processes can be re-published to the data space as alternative
 distributions of the same datasets using DCAT.
 
 ---
 
-## Interface
+# Mapping to data spaces components
 
-The choice of browser interface is for demonstration purposes, 
-similar functionality can be installed as CLI pipelines that automate this functionality.
+The role of the Vocabulary Hub is to work in tandem with the existing data space actors to facilitate the publishing and integration of semantically rich data in the data space. This demonstrator centralized different parts of this process into a single Web interface, that can be separated into different components in the data space.
+
+- **Data portal** The data portal interface loading the dcat-ap feeds in the ecosystem represents the role of the **data catalog** in the data spaces ecosystem. Here, datasets are added, shared and published. The mapping service represents a data published (or automated service in the data catalog) doing a semantic mapping of a published dataset, and publishing this mapped semantic dataset as a DCAT distribution of the original dataset, while including information about the semantic mapping as a dataset profile, which can either be pushed directly to a vocabulary hub component, or can be pulled indirectly by the vocabulary hub from the catalog pushing this metadata.
+
+- **RDF portal** The rdf portal interface provides an overview of the semantically enriched datasets available in the vocabulary hub, linking their used dataset profiles, and allowing the exporting of the available datasets based on a target profile description and the available alignment pipelines. This represents the combined role of multiple components: the **data catalog** storing the dataset metadata from which distributions of relevant dataset in an RDF format are retrieved, the **vocabulary hub** where the dataset profiles and alignments (in this case SPARQL Construct queries) between these profiles are stored, and the **data consumer** that runs imports the datasets and executes the alignments according to their data requirements.
+
+- **Alignment pipelines** The alignment pipelines interface provides an overview of the alignment information that is registered in the **vocabulary hub**. The execution of these pipelines takes the form of the **data consumer** retrieving the SPARQL Construct queries used to convert from a source to a target profile, and execute them over the source inputs from the **data catalog** according to the pipeline source and target profiles, and insert the resulting RDF in the aligned profile in their local graph store.
+
+- **Dataset profile registry** The dataset profile registry gives an overview of the used profiles in the dataset metadata and pipelines available in the data space. These can be persisted in the vocabulary hub service, or discovered ad hoc by processing the dataset and alignment metadata available in the vocabulary hub and data catalog.
 `;
 
 export function DocumentationPage() {

@@ -1,15 +1,14 @@
-import { useState } from 'react';
-import { BookOpen, Edit3, Eye } from 'lucide-react';
-import ReactMarkdown from 'react-markdown';
-import "./markdown.css"
-
-const defaultContent = `
 # Vocabular Hub Demonstrator DeployEMDS
 
 This repository contains the demonstrator of the vocabulary hub created for the deployEMDS project. 
 
 It provides the following interfaces:
+- **Data Portal**: Loads DCAT-AP feeds and contained datasets, ad enables their mapping into RDF using YARRRML.
+- **RDF Portal**: Displays the dataset distributions available as RDF, their linked profiles, and the option to export them according to a certain profile using the alignment pipelines.
+- **Alignment Pipelines**: Displays the current alignment pipelines based on SPARQL Construct queries available in the system, as well as the option to add additional pipelines by providing a SPARQL Construct query to the system.
+- **Dataset Profile Registry**: Provides an overview of the loaded dataset profiles, and their connected datasets and pipelines in the system 
 
+---
 
 ## Preparatory steps
 
@@ -54,7 +53,6 @@ To add an (LDES) DCAT-AP feed to the system
 3. Add the URL of the (LDES) DCAT-AP feed
 4. The system will automatically discover and list available datasets
 
-
 For the demo, the feed at [https://pod.rubendedecker.be/scholar/projects/deployEMDS/feeds/results-feed](https://pod.rubendedecker.be/scholar/projects/deployEMDS/feeds/results-feed) was added, for which the appropriate mappings have been pre-filled in the input fields.
 
 Notes: 
@@ -65,6 +63,9 @@ For the demo, added feeds and pipelines are stored internally in the webpage, an
 
 Once feeds are added, you can:
 
+- **Search** datasets by title, description, or publisher
+- **Filter** the datasets on keywords
+- **Select** datasets for mapping
 
 ### 1.3 Mapping Datasets
 
@@ -92,6 +93,10 @@ The mapping service can be found at [https://github.com/Dexagod/yarrrml-to-rml-s
 
 Similarly to the **Data Portal** page, datasets can be filtered using:
 
+- **Search** on datasets by title, description, or publisher
+- **Feed** using the feed component
+- **Filtering** on the used keywords
+- **Selection** of the resulting datasets in the dataset browser component.
 
 
 ### 2.2 Exporting datasets
@@ -145,125 +150,16 @@ this can happen both at the edge by the client, or by distributed services avail
 The resulting resources of RML mapping or Semantic Alignment mapping processes can be re-published to the data space as alternative
 distributions of the same datasets using DCAT.
 
+---
 
 # Mapping to data spaces components
 
 The role of the Vocabulary Hub is to work in tandem with the existing data space actors to facilitate the publishing and integration of semantically rich data in the data space. This demonstrator centralized different parts of this process into a single Web interface, that can be separated into different components in the data space.
 
+- **Data portal** The data portal interface loading the dcat-ap feeds in the ecosystem represents the role of the **data catalog** in the data spaces ecosystem. Here, datasets are added, shared and published. The mapping service represents a data published (or automated service in the data catalog) doing a semantic mapping of a published dataset, and publishing this mapped semantic dataset as a DCAT distribution of the original dataset, while including information about the semantic mapping as a dataset profile, which can either be pushed directly to a vocabulary hub component, or can be pulled indirectly by the vocabulary hub from the catalog pushing this metadata.
 
+- **RDF portal** The rdf portal interface provides an overview of the semantically enriched datasets available in the vocabulary hub, linking their used dataset profiles, and allowing the exporting of the available datasets based on a target profile description and the available alignment pipelines. This represents the combined role of multiple components: the **data catalog** storing the dataset metadata from which distributions of relevant dataset in an RDF format are retrieved, the **vocabulary hub** where the dataset profiles and alignments (in this case SPARQL Construct queries) between these profiles are stored, and the **data consumer** that runs imports the datasets and executes the alignments according to their data requirements.
 
+- **Alignment pipelines** The alignment pipelines interface provides an overview of the alignment information that is registered in the **vocabulary hub**. The execution of these pipelines takes the form of the **data consumer** retrieving the SPARQL Construct queries used to convert from a source to a target profile, and execute them over the source inputs from the **data catalog** according to the pipeline source and target profiles, and insert the resulting RDF in the aligned profile in their local graph store.
 
-`;
-
-export function DocumentationPage() {
-  
-
-  return (
-    <div className="max-w-4xl mx-auto">
-      <div className="bg-white rounded-lg shadow-sm border border-gray-200">
-        <div className="p-6 border-b border-gray-200">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <BookOpen className="w-5 h-5 text-blue-600" />
-              <h2 className="text-gray-900">Documentation</h2>
-            </div>
-          </div>
-        </div>
-        <div className="p-6 border-b border-gray-200">
-          <div className="max-w-3xl mx-auto">
-            <h3 className="text-gray-900 mb-2">Demo video</h3>
-            <div className="w-full rounded overflow-hidden">
-              <video controls className="w-full h-auto rounded-md" preload="metadata">
-                {/* Try both possible locations so the video loads in dev (repo root) and in production (docs as root) */}
-                {/* <source src="/video/my-video.mp4" type="video/mp4" /> */}
-                <source src="/docs/video/my-video.mp4" type="video/mp4" />
-                Your browser does not support the video tag. You can <a href="/video/my-video.mp4">download the video</a> instead.
-              </video>
-            </div>
-          </div>
-        </div>
-        <div className="p-8 prose prose-blue max-w-none">
-          <ReactMarkdown
-            components={{
-              h1: ({ children }) => (
-                <h1 className="text-gray-900 mt-8 mb-4 pb-3 border-b border-gray-200 first:mt-0">
-                  {children}
-                </h1>
-              ),
-              h2: ({ children }) => (
-                <h2 className="text-gray-900 mt-8 mb-3">
-                  {children}
-                </h2>
-              ),
-              h3: ({ children }) => (
-                <h3 className="text-gray-900 mt-6 mb-2">
-                  {children}
-                </h3>
-              ),
-              p: ({ children }) => (
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  {children}
-                </p>
-              ),
-              ul: ({ children }) => (
-                <ul className="list-disc list-inside text-gray-700 mb-4 space-y-1">
-                  {children}
-                </ul>
-              ),
-              ol: ({ children }) => (
-                <ol className="list-decimal list-inside text-gray-700 mb-4 space-y-1">
-                  {children}
-                </ol>
-              ),
-              li: ({ children }) => (
-                <li className="text-gray-700 ml-4">
-                  {children}
-                </li>
-              ),
-              code: ({ className, children }) => {
-                const isBlock = className?.includes('language-');
-                if (isBlock) {
-                  return (
-                    <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-4">
-                      <code className="text-sm">{children}</code>
-                    </pre>
-                  );
-                }
-                return (
-                  <code className="bg-gray-100 text-gray-800 px-1.5 py-0.5 rounded text-sm">
-                    {children}
-                  </code>
-                );
-              },
-              blockquote: ({ children }) => (
-                <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-600 my-4">
-                  {children}
-                </blockquote>
-              ),
-              hr: () => (
-                <hr className="border-gray-200 my-8" />
-              ),
-              strong: ({ children }) => (
-                <strong className="text-gray-900">
-                  {children}
-                </strong>
-              ),
-              a: ({ href, children }) => (
-                <a
-                  href={href}
-                  className="text-blue-600 hover:text-blue-800 underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {children}
-                </a>
-              ),
-            }}
-          >
-            {defaultContent}
-          </ReactMarkdown>
-        </div>
-      </div>
-    </div>
-  );
-}
+- **Dataset profile registry** The dataset profile registry gives an overview of the used profiles in the dataset metadata and pipelines available in the data space. These can be persisted in the vocabulary hub service, or discovered ad hoc by processing the dataset and alignment metadata available in the vocabulary hub and data catalog.

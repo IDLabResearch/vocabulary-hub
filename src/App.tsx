@@ -18,7 +18,7 @@ const pipelineFeedUrl = "https://pod.rubendedecker.be/scholar/projects/deployEMD
 
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<Page>('data-portal');
+  const [currentPage, setCurrentPage] = useState<Page>('documentation');
 
   const [profiles, setProfiles] = useState<Profile[]>([])
 

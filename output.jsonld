@@ -1,0 +1,456 @@
+{
+  "@context": {
+    "@base": "https://pod.rubendedecker.be/scholar/deployEMDS/data/datasets/catalog",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dct": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "geo": "http://www.opengis.net/ont/geosparql#",
+    "locn": "http://www.w3.org/ns/locn#",
+    "mobilitydcatap": "https://w3id.org/mobilitydcat-ap#",
+    "geometry": {
+      "@id": "locn:geometry",
+      "@type": "geo:wktLiteral"
+    },
+    "accrualPeriodicity": {
+      "@id": "http://purl.org/dc/terms/accrualPeriodicity",
+      "@type": "wkt:duration"
+    },
+    "spatial": "dct:spatial",
+    "Location": "dct:Location"
+  },
+  "@type": "dcat:Catalog",
+  "dct:title": {
+    "@value": "Hamburg Traffic Counting Datasets",
+    "@language": "en"
+  },
+  "dct:description": {
+    "@value": "Traffic counting datasets published via OGC SensorThings API",
+    "@language": "en"
+  },
+  "foaf:homepage": {
+    "@id": "https://pod.rubendedecker.be/scholar/deployEMDS/data/datasets/catalog"
+  },
+  "dct:spatial": {
+    "@type": "dct:Location",
+    "dct:identifier": {
+      "@id": "http://publications.europa.eu/resource/authority/place/DEU_HAM"
+    },
+    "skos:inScheme": {
+      "@id": "http://publications.europa.eu/resource/authority/place"
+    }
+  },
+  "dct:publisher": {
+    "@type": "foaf:Organization",
+    "foaf:name": {
+      "@value": "Freie und Hansestadt Hamburg",
+      "@language": "de"
+    }
+  },
+  "dcat:dataset": [
+    {
+      "@id": "d71f0887-d5aa-41ca-ba04-f3fc73c9613f"
+    },
+    {
+      "@id": "b0a4d880-0fba-47f0-99d2-eea467256739"
+    },
+    {
+      "@id": "47f465d9-b7a8-445b-b947-1f99bf67e0b6"
+    },
+    {
+      "@id": "f945aa2b-8305-444f-aeae-8fb0662f498e"
+    },
+    {
+      "@id": "0834d602-45c9-41f5-b208-b4012532a71f"
+    }
+  ],
+  "dcat:record": [
+    {
+      "@type": "dcat:CatalogRecord",
+      "dct:created": {
+        "@value": "2026-05-05T17:04:42.418Z",
+        "@type": "xsd:dateTime"
+      },
+      "dct:language": "de",
+      "dct:modified": {
+        "@value": "2023-03-23T13:40:45.319Z",
+        "@type": "xsd:dateTime"
+      },
+      "foaf:primaryTopic": {
+        "@id": "#d71f0887-d5aa-41ca-ba04-f3fc73c9613f",
+        "@type": "dcat:Dataset",
+        "mobilitydcatap:mobilityTheme": {
+          "@id": "https://w3id.org/mobilitydcat-ap/mobility-theme/traffic-volume"
+        },
+        "dct:title": {
+          "@value": "Kfz-Aufkommen an Verkehrszählstelle 0267921 im 15-Min-Intervall (veraltet)",
+          "@language": "de"
+        },
+        "dct:description": {
+          "@value": "Die Anzahl der von der Infrarotkamera erfassten Kfz wird für ein 15-Min-Intervall aufsummiert.",
+          "@language": "de"
+        },
+        "dct:publisher": {
+          "@type": "foaf:Organization",
+          "foaf:name": {
+            "@value": "Freie und Hansestadt Hamburg",
+            "@language": "de"
+          }
+        },
+        "dct:spatial": {
+          "@type": "Location",
+          "geometry": "POINT(9.933408 53.584036)"
+        },
+        "dct:accrualPeriodicity": {
+          "@value": "PT15M",
+          "@type": "xsd:duration"
+        },
+        "dct:temporal": {
+          "@type": "dct:PeriodOfTime",
+          "dct:description": "Aggregation interval: PT15M"
+        },
+        "dct:relation": [
+          {
+            "@id": "https://iot.hamburg.de/v1.1/Datastreams(13574)/Sensor"
+          },
+          {
+            "@id": "https://iot.hamburg.de/v1.1/Datastreams(13574)/Thing"
+          },
+          {
+            "@id": "https://iot.hamburg.de/v1.1/Datastreams(13574)/ObservedProperty"
+          }
+        ],
+        "dcat:distribution": [
+          {
+            "@type": "dcat:Distribution",
+            "mobilitydcatap:mobilityDataStandard": {
+              "@id": "https://example.org/profile"
+            },
+            "dct:rights": {
+              "@id": "http://publications.europa.eu/resource/authority/access-right/PUBLIC"
+            },
+            "dcat:accessURL": {
+              "@id": "https://iot.hamburg.de/v1.1/Datastreams(13574)/Observations"
+            },
+            "dct:format": {
+              "@id": "http://publications.europa.eu/resource/authority/file-type/JSON"
+            }
+          }
+        ],
+        "dcat:landingPage": {
+          "@id": "https://registry.gdi-de.org/id/de.hh/03957ed9-5fc4-48a5-997e-e46c8c207c8f"
+        }
+      }
+    },
+    {
+      "@type": "dcat:CatalogRecord",
+      "dct:created": {
+        "@value": "2026-05-05T17:04:42.288Z",
+        "@type": "xsd:dateTime"
+      },
+      "dct:language": "de",
+      "dct:modified": {
+        "@value": "2023-03-23T13:41:04.700Z",
+        "@type": "xsd:dateTime"
+      },
+      "foaf:primaryTopic": {
+        "@id": "#b0a4d880-0fba-47f0-99d2-eea467256739",
+        "@type": "dcat:Dataset",
+        "mobilitydcatap:mobilityTheme": {
+          "@id": "https://w3id.org/mobilitydcat-ap/mobility-theme/traffic-volume"
+        },
+        "dct:title": {
+          "@value": "Kfz-Aufkommen an Verkehrszählstelle 0267951 im 15-Min-Intervall (veraltet)",
+          "@language": "de"
+        },
+        "dct:description": {
+          "@value": "Die Anzahl der von der Infrarotkamera erfassten Kfz wird für ein 15-Min-Intervall aufsummiert.",
+          "@language": "de"
+        },
+        "dct:publisher": {
+          "@type": "foaf:Organization",
+          "foaf:name": {
+            "@value": "Freie und Hansestadt Hamburg",
+            "@language": "de"
+          }
+        },
+        "dct:spatial": {
+          "@type": "Location",
+          "geometry": "POINT(9.934472 53.582967)"
+        },
+        "dct:accrualPeriodicity": {
+          "@value": "PT15M",
+          "@type": "xsd:duration"
+        },
+        "dct:temporal": {
+          "@type": "dct:PeriodOfTime",
+          "dct:description": "Aggregation interval: PT15M"
+        },
+        "dct:relation": [
+          {
+            "@id": "https://iot.hamburg.de/v1.1/Datastreams(14390)/Sensor"
+          },
+          {
+            "@id": "https://iot.hamburg.de/v1.1/Datastreams(14390)/Thing"
+          },
+          {
+            "@id": "https://iot.hamburg.de/v1.1/Datastreams(14390)/ObservedProperty"
+          }
+        ],
+        "dcat:distribution": [
+          {
+            "@type": "dcat:Distribution",
+            "mobilitydcatap:mobilityDataStandard": {
+              "@id": "https://example.org/profile"
+            },
+            "dct:rights": {
+              "@id": "http://publications.europa.eu/resource/authority/access-right/PUBLIC"
+            },
+            "dcat:accessURL": {
+              "@id": "https://iot.hamburg.de/v1.1/Datastreams(14390)/Observations"
+            },
+            "dct:format": {
+              "@id": "http://publications.europa.eu/resource/authority/file-type/JSON"
+            }
+          }
+        ],
+        "dcat:landingPage": {
+          "@id": "https://registry.gdi-de.org/id/de.hh/03957ed9-5fc4-48a5-997e-e46c8c207c8f"
+        }
+      }
+    },
+    {
+      "@type": "dcat:CatalogRecord",
+      "dct:created": {
+        "@value": "2026-05-05T17:04:42.279Z",
+        "@type": "xsd:dateTime"
+      },
+      "dct:language": "de",
+      "dct:modified": {
+        "@value": "2023-03-23T13:41:01.012Z",
+        "@type": "xsd:dateTime"
+      },
+      "foaf:primaryTopic": {
+        "@id": "#47f465d9-b7a8-445b-b947-1f99bf67e0b6",
+        "@type": "dcat:Dataset",
+        "mobilitydcatap:mobilityTheme": {
+          "@id": "https://w3id.org/mobilitydcat-ap/mobility-theme/traffic-volume"
+        },
+        "dct:title": {
+          "@value": "Kfz-Aufkommen an Verkehrszählstelle 0267950 im 15-Min-Intervall (veraltet)",
+          "@language": "de"
+        },
+        "dct:description": {
+          "@value": "Die Anzahl der von der Infrarotkamera erfassten Kfz wird für ein 15-Min-Intervall aufsummiert.",
+          "@language": "de"
+        },
+        "dct:publisher": {
+          "@type": "foaf:Organization",
+          "foaf:name": {
+            "@value": "Freie und Hansestadt Hamburg",
+            "@language": "de"
+          }
+        },
+        "dct:spatial": {
+          "@type": "Location",
+          "geometry": "POINT(9.934579 53.583029)"
+        },
+        "dct:accrualPeriodicity": {
+          "@value": "PT15M",
+          "@type": "xsd:duration"
+        },
+        "dct:temporal": {
+          "@type": "dct:PeriodOfTime",
+          "dct:description": "Aggregation interval: PT15M"
+        },
+        "dct:relation": [
+          {
+            "@id": "https://iot.hamburg.de/v1.1/Datastreams(14278)/Sensor"
+          },
+          {
+            "@id": "https://iot.hamburg.de/v1.1/Datastreams(14278)/Thing"
+          },
+          {
+            "@id": "https://iot.hamburg.de/v1.1/Datastreams(14278)/ObservedProperty"
+          }
+        ],
+        "dcat:distribution": [
+          {
+            "@type": "dcat:Distribution",
+            "mobilitydcatap:mobilityDataStandard": {
+              "@id": "https://example.org/profile"
+            },
+            "dct:rights": {
+              "@id": "http://publications.europa.eu/resource/authority/access-right/PUBLIC"
+            },
+            "dcat:accessURL": {
+              "@id": "https://iot.hamburg.de/v1.1/Datastreams(14278)/Observations"
+            },
+            "dct:format": {
+              "@id": "http://publications.europa.eu/resource/authority/file-type/JSON"
+            }
+          }
+        ],
+        "dcat:landingPage": {
+          "@id": "https://registry.gdi-de.org/id/de.hh/03957ed9-5fc4-48a5-997e-e46c8c207c8f"
+        }
+      }
+    },
+    {
+      "@type": "dcat:CatalogRecord",
+      "dct:created": {
+        "@value": "2026-05-05T17:04:42.289Z",
+        "@type": "xsd:dateTime"
+      },
+      "dct:language": "de",
+      "dct:modified": {
+        "@value": "2023-03-23T13:40:45.158Z",
+        "@type": "xsd:dateTime"
+      },
+      "foaf:primaryTopic": {
+        "@id": "#f945aa2b-8305-444f-aeae-8fb0662f498e",
+        "@type": "dcat:Dataset",
+        "mobilitydcatap:mobilityTheme": {
+          "@id": "https://w3id.org/mobilitydcat-ap/mobility-theme/traffic-volume"
+        },
+        "dct:title": {
+          "@value": "Kfz-Aufkommen an Verkehrszählstelle 0267922 im 15-Min-Intervall (veraltet)",
+          "@language": "de"
+        },
+        "dct:description": {
+          "@value": "Die Anzahl der von der Infrarotkamera erfassten Kfz wird für ein 15-Min-Intervall aufsummiert.",
+          "@language": "de"
+        },
+        "dct:publisher": {
+          "@type": "foaf:Organization",
+          "foaf:name": {
+            "@value": "Freie und Hansestadt Hamburg",
+            "@language": "de"
+          }
+        },
+        "dct:spatial": {
+          "@type": "Location",
+          "geometry": "POINT(9.93371 53.584034)"
+        },
+        "dct:accrualPeriodicity": {
+          "@value": "PT15M",
+          "@type": "xsd:duration"
+        },
+        "dct:temporal": {
+          "@type": "dct:PeriodOfTime",
+          "dct:description": "Aggregation interval: PT15M"
+        },
+        "dct:relation": [
+          {
+            "@id": "https://iot.hamburg.de/v1.1/Datastreams(13562)/Sensor"
+          },
+          {
+            "@id": "https://iot.hamburg.de/v1.1/Datastreams(13562)/Thing"
+          },
+          {
+            "@id": "https://iot.hamburg.de/v1.1/Datastreams(13562)/ObservedProperty"
+          }
+        ],
+        "dcat:distribution": [
+          {
+            "@type": "dcat:Distribution",
+            "mobilitydcatap:mobilityDataStandard": {
+              "@id": "https://example.org/profile"
+            },
+            "dct:rights": {
+              "@id": "http://publications.europa.eu/resource/authority/access-right/PUBLIC"
+            },
+            "dcat:accessURL": {
+              "@id": "https://iot.hamburg.de/v1.1/Datastreams(13562)/Observations"
+            },
+            "dct:format": {
+              "@id": "http://publications.europa.eu/resource/authority/file-type/JSON"
+            }
+          }
+        ],
+        "dcat:landingPage": {
+          "@id": "https://registry.gdi-de.org/id/de.hh/03957ed9-5fc4-48a5-997e-e46c8c207c8f"
+        }
+      }
+    },
+    {
+      "@type": "dcat:CatalogRecord",
+      "dct:created": {
+        "@value": "2026-05-05T17:04:42.432Z",
+        "@type": "xsd:dateTime"
+      },
+      "dct:language": "de",
+      "dct:modified": {
+        "@value": "2023-03-23T13:47:01.804Z",
+        "@type": "xsd:dateTime"
+      },
+      "foaf:primaryTopic": {
+        "@id": "#0834d602-45c9-41f5-b208-b4012532a71f",
+        "@type": "dcat:Dataset",
+        "mobilitydcatap:mobilityTheme": {
+          "@id": "https://w3id.org/mobilitydcat-ap/mobility-theme/traffic-volume"
+        },
+        "dct:title": {
+          "@value": "Kfz-Aufkommen an Verkehrszählstelle 0267960 im 15-Min-Intervall (veraltet)",
+          "@language": "de"
+        },
+        "dct:description": {
+          "@value": "Die Anzahl der von der Infrarotkamera erfassten Kfz wird für ein 15-Min-Intervall aufsummiert.",
+          "@language": "de"
+        },
+        "dct:publisher": {
+          "@type": "foaf:Organization",
+          "foaf:name": {
+            "@value": "Freie und Hansestadt Hamburg",
+            "@language": "de"
+          }
+        },
+        "dct:spatial": {
+          "@type": "Location",
+          "geometry": "POINT(9.933863 53.582738)"
+        },
+        "dct:accrualPeriodicity": {
+          "@value": "PT15M",
+          "@type": "xsd:duration"
+        },
+        "dct:temporal": {
+          "@type": "dct:PeriodOfTime",
+          "dct:description": "Aggregation interval: PT15M"
+        },
+        "dct:relation": [
+          {
+            "@id": "https://iot.hamburg.de/v1.1/Datastreams(16179)/Sensor"
+          },
+          {
+            "@id": "https://iot.hamburg.de/v1.1/Datastreams(16179)/Thing"
+          },
+          {
+            "@id": "https://iot.hamburg.de/v1.1/Datastreams(16179)/ObservedProperty"
+          }
+        ],
+        "dcat:distribution": [
+          {
+            "@type": "dcat:Distribution",
+            "mobilitydcatap:mobilityDataStandard": {
+              "@id": "https://example.org/profile"
+            },
+            "dct:rights": {
+              "@id": "http://publications.europa.eu/resource/authority/access-right/PUBLIC"
+            },
+            "dcat:accessURL": {
+              "@id": "https://iot.hamburg.de/v1.1/Datastreams(16179)/Observations"
+            },
+            "dct:format": {
+              "@id": "http://publications.europa.eu/resource/authority/file-type/JSON"
+            }
+          }
+        ],
+        "dcat:landingPage": {
+          "@id": "https://registry.gdi-de.org/id/de.hh/03957ed9-5fc4-48a5-997e-e46c8c207c8f"
+        }
+      }
+    }
+  ]
+}

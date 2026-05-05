@@ -1,0 +1,226 @@
+@prefix : <https://pod.rubendedecker.be/projecs/deployEMDS/shapes/mobility-dcat-ap-v3_0_0>.
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix mobilitydcatap: <https://w3id.org/mobilitydcat-ap#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+
+#################################################################
+# Catalog
+#################################################################
+
+:CatalogShape
+    a sh:NodeShape ;
+    sh:targetClass dcat:Catalog ;
+
+    sh:property [
+        sh:path dct:title ;
+        sh:minCount 1 ;
+        sh:datatype rdf:langString ;
+    ] ;
+
+    sh:property [
+        sh:path dct:description ;
+        sh:minCount 1 ;
+        sh:datatype rdf:langString ;
+    ] ;
+
+    sh:property [
+        sh:path foaf:homepage ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+
+    sh:property [
+        sh:path dct:publisher ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:node :AgentShape ;
+    ] ;
+
+    sh:property [
+        sh:path dcat:dataset ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+
+    sh:property [
+        sh:path dcat:record ;
+        sh:minCount 1 ;
+        sh:node :CatalogRecordShape ;
+    ] ;
+
+    sh:property [
+        sh:path dct:spatial ;
+        sh:minCount 1 ;
+        sh:node :LocationShape ;
+    ] .
+
+#################################################################
+# Catalog Record
+#################################################################
+
+:CatalogRecordShape
+    a sh:NodeShape ;
+    sh:targetClass dcat:CatalogRecord ;
+
+    sh:property [
+        sh:path dct:created ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ;
+    ] ;
+
+    sh:property [
+        sh:path dct:modified ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ;
+    ] ;
+
+    sh:property [
+        sh:path dct:language ;
+        sh:minCount 1 ;
+        sh:or (
+            [ sh:nodeKind sh:IRI ]
+            [ sh:datatype xsd:string ]
+        )
+    ] ;
+
+    sh:property [
+        sh:path foaf:primaryTopic ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:node :DatasetShape ;
+    ] .
+
+#################################################################
+# Dataset
+#################################################################
+
+:DatasetShape
+    a sh:NodeShape ;
+    sh:targetClass dcat:Dataset ;
+
+    sh:property [
+        sh:path dct:title ;
+        sh:minCount 1 ;
+        sh:datatype rdf:langString ;
+    ] ;
+
+    sh:property [
+        sh:path dct:description ;
+        sh:minCount 1 ;
+        sh:datatype rdf:langString ;
+    ] ;
+
+    sh:property [
+        sh:path dct:accrualPeriodicity ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+         sh:or (
+            [ sh:nodeKind sh:IRI ]
+            [ sh:datatype xsd:duration ]
+        )
+    ] ;
+
+    sh:property [
+        sh:path mobilitydcatap:mobilityTheme ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+
+    sh:property [
+        sh:path dct:publisher ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:node :AgentShape ;
+    ] ;
+
+    sh:property [
+        sh:path dct:spatial ;
+        sh:minCount 1 ;
+        sh:node :LocationShape ;
+    ] ;
+
+    sh:property [
+        sh:path dcat:distribution ;
+        sh:minCount 1 ;
+        sh:node :DistributionShape ;
+    ] .
+
+#################################################################
+# Distribution
+#################################################################
+
+:DistributionShape
+    a sh:NodeShape ;
+    sh:targetClass dcat:Distribution ;
+
+    sh:property [
+        sh:path dcat:accessURL ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+
+    sh:property [
+        sh:path dct:format ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+
+    sh:property [
+        sh:path dct:rights ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+
+    sh:property [
+        sh:path mobilitydcatap:mobilityDataStandard ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:node sh:IRI ;
+    ] ;
+
+    sh:property [
+        sh:path mobilitydcatap:schema ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:node sh:IRI ;
+    ] .
+
+#################################################################
+# Agent
+#################################################################
+
+:AgentShape
+    a sh:NodeShape ;
+    sh:targetClass foaf:Agent ;
+    sh:targetClass foaf:Organization ;
+    sh:property [
+        sh:path foaf:name ;
+        sh:minCount 1 ;
+        sh:datatype rdf:langString ;
+    ] .
+
+#################################################################
+# Location
+#################################################################
+
+:LocationShape
+    a sh:NodeShape ;
+    sh:targetClass dct:Location ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+
+    sh:property [
+        sh:path locn:geometry ;
+        sh:datatype geo:wktLiteral ;
+    ] .

@@ -175,9 +175,9 @@ export function DocumentationPage() {
             <div className="w-full rounded overflow-hidden">
               <video controls className="w-full h-auto rounded-md" preload="metadata">
                 {/* Try both possible locations so the video loads in dev (repo root) and in production (docs as root) */}
-                {/* <source src="/video/my-video.mp4" type="video/mp4" /> */}
-                <source src="/docs/video/my-video.mp4" type="video/mp4" />
-                Your browser does not support the video tag. You can <a href="/video/my-video.mp4">download the video</a> instead.
+                {/* <source src="/my-video.mp4" type="video/mp4" /> */}
+                <source src="/docs/my-video.mp4" type="video/mp4" />
+                Your browser does not support the video tag. You can <a href="/my-video.mp4">download the video</a> instead.
               </video>
             </div>
           </div>

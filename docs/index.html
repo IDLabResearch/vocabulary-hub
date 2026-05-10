@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: min(1000px, 95vw);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    video {
+      width: 100%;
+      max-height: 80vh;
+      background: black;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Video</h1>
+    <video controls preload="metadata">
+      <source src="./video/my-video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</body>
+</html>

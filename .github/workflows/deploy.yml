@@ -8,6 +8,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -23,9 +24,13 @@ jobs:
       - name: Build
         run: npm run build --if-present
 
+      - name: Copy documentation into dist
+        run: |
+          mkdir -p dist/documentation
+          cp -r documentation/* dist/documentation/
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          # keep_files: true # optionally keep existing files on the branch

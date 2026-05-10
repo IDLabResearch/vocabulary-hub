@@ -26,8 +26,8 @@ jobs:
 
       - name: Copy documentation into dist
         run: |
-          mkdir -p dist/documentation
-          cp -r documentation/* dist/documentation/
+          mkdir -p dist/docs
+          cp -r docs/* dist/docs/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
